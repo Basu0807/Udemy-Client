@@ -10,7 +10,7 @@ const GenericCategory = () => {
   
   // console.log(AllCourses);
  const Category =useLocation().state.Cat
- console.log(Category);
+//  console.log(Category);
  const dispatch =useDispatch()
  const[show,setshow]=useState(true)
  const[show1,setshow1]=useState(true)

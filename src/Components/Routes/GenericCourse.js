@@ -6,7 +6,7 @@ import { Add } from '../Redux/CartSlice';
 
 const GenericCourse = () => {
   const Products =useSelector((state)=>state.Search)
-  console.log(Products);
+  // console.log(Products);
 
   const[show,setshow]=useState(true)
   const[show1,setshow1]=useState(true)

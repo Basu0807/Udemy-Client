@@ -30,9 +30,7 @@ const RouteCompo = () => {
         <Route path='/join/login-popup' element={<Login/>}/>
         <Route path='/join/signup-popup' element={<SignUp/>}/>
         <Route path='/AddtoCart' element={<AddToCart/>}/>
-        
-
-    </Routes>
+        </Routes>
     
     
     </>
