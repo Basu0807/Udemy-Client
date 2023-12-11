@@ -4,7 +4,7 @@ import {useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../Layouts/Footer'
 import { Remove, TotalAmount } from '../Redux/CartSlice';
-import {loadStripe} from '@stripe/stripe-js'
+import {loadStripe} from '@stripe/stripe-js';
 
 const AddToCart = () => {
     const token =localStorage.getItem("token")
