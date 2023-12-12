@@ -46,9 +46,7 @@ top: 1%;
 
 
 *{
-
-
-    margin: 0;
+ margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -376,14 +374,15 @@ background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* text-align: start; */
     /* align-items: start; */
-    /* padding: 0px 10px; */
+    padding: 0px 10px;
     /* border: 1px solid black; */
 }
 
 .content img[alt='content']{
     width: 90%;
-    height: 50%;
+    /* height: 50%; */
     border: 1px solid black;
     text-align: center;
     /* margin: auto; */
@@ -395,7 +394,7 @@ background-size: cover;
     font-size: 17px;
 }
 .rating_count{
-    font-size:17px ;
+    font-size:15px ;
     color: rgb(96, 95, 95);
 
 }
@@ -409,7 +408,7 @@ background-size: cover;
 /* ....................SearchCompo...................... */
 #Generic_Course{
     width: 90%;
-    margin: 5% auto;
+    margin: 3% auto;
 }
 .Search_Container{
     display: flex;
@@ -464,19 +463,59 @@ background-size: cover;
 
 /* .....................Generic_Cat_Container...................... */
 .Generic_Cat_Con{
-    width: 90%;
-    margin: auto;
+    width: 95%;
+    margin: 2% auto;
+
 }
 .Popular_Topics{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    
+    gap: 10px;
+    
+}
+.PopularBox{
+    height: 4rem;
+    width: 14rem;
+    font-weight: bold;
+    border: 1px solid rgb(180, 178, 178);
+    text-align: center;
+    padding: 16px 10px;
 }
 .Popular_instr{
+    width: 100%;
+    /* margin: 2% auto; */
     display: flex;
     justify-content: space-between;
+    align-items:stretch;
 }
 .instructor_box{
     display: flex;
+    border: 1px solid rgb(205, 202, 202);
+    padding: 10px 20px 20px 5px ;
+    height: 10rem;
+    width: 24%;
+}
+.instructor_box img[alt='instructor']{
+    height: 50%;
+    width: 40%;
+    border-radius: 50%;
+    padding:  0px 15px;
+}
+.instruc_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+p img[alt='star']{
+    height: 0.8rem;
+    width: 1rem;
+}
+
+span img[alt='star']{
+    height: 1rem;
+    width: 3rem;
+    padding: 5px 0px 0px 0px;
 }
 #Add_toCart{
     /* height: 18rem; */
@@ -678,4 +717,55 @@ transform: translate(-50%);
     height: 20px;
     border: 2px solid black;
 
+}
+
+
+
+/* .....................MEDIA_QUERY...................... */
+
+
+@media only screen and (max-width: 1200px) {
+    .Udemy_Category {
+        width: 7rem;
+        justify-content: space-between;
+    }
+    .Nav_Bar input{
+        width: 28%;
+    }
+
+    img[alt='lens']{
+        left: 50px;
+    }
+
+    .cart_count {
+top: 1.2%;
+right: 13%;
+    }
+    .Profile{
+        width:max-content;
+    }
+    .Home_img_Container{
+        height: 28vh;
+    }
+    .Inner_Container{
+        height: 62%;
+    }
+    .Inner_Container h1{
+        font-size: 25px;
+    }
+
+    .content h3{
+        font-size: 15px;
+    }
+    .PopularBox{
+        width: 8rem;
+        font-size: 13px;
+        padding: 10px 15px 0px 10px;
+    }
+    .instructor_box{
+        height: 14rem;
+    } 
+    .instructor_box img[alt='instructor'] {
+        height: 40%;
+    }
 }

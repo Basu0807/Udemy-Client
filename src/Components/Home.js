@@ -57,7 +57,7 @@ const Home = () => {
         <img src={item.image} alt='content'/>
         <h3>{item.topic}</h3>
         <p>{item.instructor}</p>
-        <p><span className='rating'>{item.rating}</span>*****<span className='rating_count'>(5454529)</span></p>
+        <p><span className='rating'>{item.rating}</span><img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/><span className='rating_count'>(5454529)</span></p>
         <p><span className='rating'>₹{item.offerPrice}</span> <span className='actual_price'>₹{item.price}</span></p>
     </div>
   

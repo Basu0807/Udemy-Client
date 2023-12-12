@@ -49,7 +49,7 @@ const Header = () => {
       e.preventDefault()
      
         axios.get(`https://udemy-server-h44n.onrender.com/store/search/?keyword=${search.keyword}`)
-            .then((res)=>dispatch(SearchItem(res.data.data)))
+            .then((res)=>dispatch(SearchItem([res.data.data,search.keyword])))
             .catch((err)=>console.log(err))
          
            setsearch({

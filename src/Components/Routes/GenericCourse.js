@@ -5,7 +5,8 @@ import { Add } from '../Redux/CartSlice';
 
 
 const GenericCourse = () => {
-  const Products =useSelector((state)=>state.Search)
+  const Products =useSelector((state)=>state.Search.SearchData)
+  const Keyword =useSelector((state)=>state.Search.keyword)
   // console.log(Products);
 
   const[show,setshow]=useState(true)
@@ -17,15 +18,15 @@ const GenericCourse = () => {
   return (
    <>
    <div id='Generic_Course'>
-   <h1 style={{marginBottom:10}}>{Products.length} related results </h1> 
+   <h1 style={{marginBottom:10}}>{Products.length} related results for "{Keyword}" </h1> 
    {Products.length ===0?<h1>Sorry, No result found</h1>:<div className='Search_Container'>
     <div className='Rating_Container'>
 <div><h2 onClick={()=>setshow(!show)}>Rating</h2>
 <div className={show?"rating":"block"}>
-  <input type='checkbox'/> 4.5 <span style={{color:'orange'}}>stars&up</span><br/>
-  <input type='checkbox'/> 3.5 <span style={{color:'orange'}}>stars&up</span> <br/>
-  <input type='checkbox'/> 3 <span style={{color:'orange'}}>stars&up</span> <br/>
-  <input type='checkbox'/> 2 <span style={{color:'orange'}}>stars&up</span> <br/>
+  <input type='checkbox'/> 4.5 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span><br/>
+  <input type='checkbox'/> 3.5 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
+  <input type='checkbox'/> 3 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
+  <input type='checkbox'/> 2 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
   
 </div>
 </div>
@@ -57,7 +58,7 @@ const GenericCourse = () => {
           <h3>₹{item.price}</h3></div>
         <p>{item.point1}</p>
         <p style={{fontSize:12}}>By {item.instructor}</p>
-        <p style={{fontWeight:'bold'}}>{item.rating} stars (2175)</p>
+        <p style={{fontWeight:'bold'}}>{item.rating} <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> (2175)</p>
         <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
       </div>
       <div id='Add_toCart'>

@@ -20,11 +20,12 @@ const GenericCategory = () => {
    <div className='Generic_Cat_Con'>
     <div>
       <p>{Category}</p>
-    </div>
+    </div><br/>
     <div>
-      <h1>{Category}</h1>
+      <h1>{Category} Courses</h1><br/><br/>
       <h2>Courses to get you started</h2>
-      <h3>Most Popular</h3>
+      <br/>
+      <h4>Most Popular</h4>
       <div className='creative_box_contents'>
     {AllCourses && AllCourses.filter((item)=>item.category===Category || item.subcategory===Category).slice(0,5).map((item,index)=>{
       return(
@@ -33,7 +34,7 @@ const GenericCategory = () => {
         <img src={item.image} alt='content'/>
         <h3>{item.topic}</h3>
         <p>{item.instructor}</p>
-        <p><span className='rating'>{item.rating}</span>*****<span className='rating_count'>(5454529)</span></p>
+        <p><span className='rating'>{item.rating}</span><img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/><span className='rating_count'>(5454529)</span></p>
         <p><span className='rating'>₹{item.offerPrice}</span> <span className='actual_price'>₹{item.price}</span></p>
         <div id='Add_toCart'>
           <h3>{item.topic}</h3>
@@ -54,76 +55,75 @@ const GenericCategory = () => {
       </div>
     </div>
     
-      <h2>Popular Topics</h2>
+      <h2>Popular Topics</h2><br/>
       <div className='Popular_Topics'>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
-        <div className='loginBox'>Python</div>
+        <div className='PopularBox'>Python</div>
+        <div className='PopularBox'>Data Science</div>
+        <div className='PopularBox'>React JS</div>
+        <div className='PopularBox'>Java</div>
+        <div className='PopularBox'>C# (programming Language)</div>
+        <div className='PopularBox'>Web Development</div>
+        <div className='PopularBox'>JavaScript</div>
+        <div className='PopularBox'>Unreal Engine</div>
+        <div className='PopularBox'>Machine Learning</div>
+        <div className='PopularBox'>Deep Learning</div>
        
-    </div>
-    <h2>Popular Instructors</h2>
+    </div><br/>
+    <h2>Popular Instructors</h2><br/>
     <div className='Popular_instr'>
    <div className='instructor_box'>
     <img src='https://img-c.udemycdn.com/user/75x75/31334738_a13c_3.jpg' alt='instructor'/>
-    <div>
-    <p>Dr. Angela Yu</p>
-    <p>Python, Datascience</p>
-    <p>4.6 starsInstructor Rating</p>
-    <p>7894561 Students</p>
-    <p>7 courses</p>
+    <div className='instruc_details'>
+    <p><b>Dr. Angela Yu</b></p>
+    <p style={{fontSize:13}}>Python, Datascience</p>
+    <p><b style={{fontSize:14}}>4.6</b> <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span style={{fontSize:12}}>Instructor Rating</span></p>
+    <p><b style={{fontSize:13}}>2,345,25</b> <span style={{fontSize:12}}>Students</span></p>
+    <p><b style={{fontSize:13}}>7</b> <span style={{fontSize:12}}>courses</span></p>
     </div>
    </div>
    <div className='instructor_box'>
     <img src='https://img-c.udemycdn.com/user/75x75/31926668_94e7_6.jpg' alt='instructor'/>
-    <div>
-    <p>Maximillian</p>
-    <p>Python, Datascience</p>
-    <p>4.6 starsInstructor Rating</p>
-    <p>7894561 Students</p>
-    <p>7 courses</p>
+    <div className='instruc_details'>
+    <p><b>Maximillian</b></p>
+    <p style={{fontSize:13}}>React JS, React Hooks</p>
+    <p><b style={{fontSize:14}}>4.3</b> <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span style={{fontSize:12}}>Instructor Rating</span></p>
+    <p><b style={{fontSize:13}}>2,345,25</b> <span style={{fontSize:12}}>Students</span></p>
+    <p><b style={{fontSize:13}}>5</b> <span style={{fontSize:12}}>courses</span></p>
     </div>
    </div>
    <div className='instructor_box'>
     <img src='https://img-c.udemycdn.com/user/75x75/7799204_2091_5.jpg' alt='instructor'/>
-    <div>
-    <p>Jonas</p>
-    <p>Python, Datascience</p>
-    <p>4.6 starsInstructor Rating</p>
-    <p>7894561 Students</p>
-    <p>7 courses</p>
+    <div className='instruc_details'>
+    <p><b>Jonas</b></p>
+    <p style={{fontSize:13}}>JavaScript</p>
+    <p><b style={{fontSize:14}}>4.5</b> <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span style={{fontSize:12}}>Instructor Rating</span></p>
+    <p><b style={{fontSize:13}}>5,345,25</b> <span style={{fontSize:12}}>Students</span></p>
+    <p><b style={{fontSize:13}}>9</b> <span style={{fontSize:12}}>courses</span></p>
     </div>
    </div>
    <div className='instructor_box'>
     <img src='https://img-c.udemycdn.com/user/75x75/9685726_67e7_4.jpg' alt='instructor'/>
-    <div>
-    <p>Jose Portilla</p>
-    <p>Python, Datascience</p>
-    <p>4.6 starsInstructor Rating</p>
-    <p>7894561 Students</p>
-    <p>7 courses</p>
+    <div className='instruc_details'>
+    <p><b>Jose Portilla</b></p>
+    <p style={{fontSize:13}}>Python, Datascience</p>
+    <p><b style={{fontSize:14}}>4.2</b> <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span style={{fontSize:12}}>Instructor Rating</span></p>
+    <p><b style={{fontSize:13}}>1,345,25</b> <span style={{fontSize:12}}>Students</span></p>
+    <p><b style={{fontSize:13}}>12</b> <span style={{fontSize:12}}>courses</span></p>
     </div>
    </div>
     </div>
     </div>
-    <br/>
+    
     <div id='Generic_Course'>
- 
+ <h1>All {Category} Courses</h1>
   <div className='Search_Container'>
     <div className='Rating_Container'>
 <div><h2 onClick={()=>setshow(!show)}>Rating</h2>
 <div className={show?"rating":"block"}>
-  <input type='checkbox'/> 4.5 <span style={{color:'orange'}}>stars&up</span><br/>
-  <input type='checkbox'/> 3.5 <span style={{color:'orange'}}>stars&up</span> <br/>
-  <input type='checkbox'/> 3 <span style={{color:'orange'}}>stars&up</span> <br/>
-  <input type='checkbox'/> 2 <span style={{color:'orange'}}>stars&up</span> <br/>
+  <input type='checkbox'/> 4.5 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span><br/>
+  <input type='checkbox'/> 3.5 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
+  <input type='checkbox'/> 3 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
+  <input type='checkbox'/> 2 <span style={{color:'orange'}}><img src='https://t3.ftcdn.net/jpg/05/40/06/92/240_F_540069216_AiqmGY0nEt8IhFgjIoCG11IVQG3IoobK.jpg' alt='star'/>&up</span> <br/>
   
 </div>
 </div>
@@ -155,7 +155,7 @@ const GenericCategory = () => {
           <h3>₹{item.price}</h3></div>
         <p>{item.point1}</p>
         <p style={{fontSize:12}}>By {item.instructor}</p>
-        <p style={{fontWeight:'bold'}}>{item.rating} stars (2175)</p>
+        <p style={{fontWeight:'bold'}}>{item.rating} <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> (2175)</p>
         <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
       </div>
       <div id='Add_toCart'>
