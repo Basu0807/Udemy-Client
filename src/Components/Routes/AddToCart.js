@@ -10,7 +10,7 @@ const AddToCart = () => {
     const token =localStorage.getItem("token")
     const CartItems=useSelector((state)=>state.InDe.Cart)
     const Total=useSelector((state)=>state.InDe.Total)
-    const quantity=useSelector((state)=>state.InDe.quantity)
+    // const quantity=useSelector((state)=>state.InDe.quantity)
     const navigate =useNavigate()
     const dispatch=useDispatch()
     dispatch(TotalAmount())
@@ -29,31 +29,38 @@ const AddToCart = () => {
         }
           },[token,navigate])
 
-          const BuyNow =async()=>{
-            const stripe =await loadStripe("pk_test_51OHNDNSEW2AXc16ZTfkbWd5hSAEhfJCQNbBI3ZBzXHRRafQnJFttZWKdoCm3zh6VlsdcqUHtu3PDH3W4uim3iOrT007UzNPtUt")
-            const body ={
-              products:CartItems,
-              total:Total,
-              quantity:quantity
+          const BuyNow = async () => {
+            const stripe = await loadStripe("pk_test_51OHNDNSEW2AXc16ZTfkbWd5hSAEhfJCQNbBI3ZBzXHRRafQnJFttZWKdoCm3zh6VlsdcqUHtu3PDH3W4uim3iOrT007UzNPtUt");
+            const body = {
+              products: CartItems,
+              total: Total
+              // You might need to adjust this structure based on your backend expectations
+            };
+            console.log(body);
+          
+            const headers = {
+              "Content-Type": "application/json"
+            };
+          
+            try {
+              const response = await fetch("https://udemy-server-h44n.onrender.com/checkout", {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(body)
+              });
+          
+              const session = await response.json();
+              const result = await stripe.redirectToCheckout({
+                sessionId: session.id
+              });
+          
+              if (result.error) {
+                console.log(result.error);
+              }
+            } catch (error) {
+              console.error("Error:", error);
             }
-            console.log(body)
-            const headers={
-              "Content-Type":"application/json"
-            }
-            const response = await fetch("https://udemy-server-h44n.onrender.com/checkout",{
-                    method:"POST",
-                    headers:headers,
-                    body:JSON.stringify(body)
-            })
-            const session= await response.json();
-            const result =stripe.redirectToCheckout({
-              sessionId:session.id
-            })
-            if(result.error){
-              console.log(result.error)
-            }
-           }
-
+          };
   return (
    <>
     {CartItems.length !==0 ? 
