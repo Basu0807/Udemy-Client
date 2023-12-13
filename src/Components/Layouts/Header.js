@@ -69,25 +69,12 @@ const Header = () => {
         <div id='Category'><p>Categories</p>
         <div id='Cat_SubCat_Box'>
           <div className='Cat_box'>
-         
-{/* <Link to={'/courses/Business'}state={{Cat:"business"}} className='Link'>Business</Link> 
-<Link to={'/courses/Development'}state={{Cat:"development"}} className='Link'>Development</Link> 
-<Link to={'/courses/Finance and Accounting'}state={{Cat:"Finance & Accounting"}}className='Link'>Finance and Accounting</Link> 
-<Link to={'/courses/IT & Software'}state={{Cat:"IT & Software"}}className='Link'>IT & Software</Link> 
-<Link to={'/courses/Design'}state={{Cat:"Design"}}className='Link'>Design</Link> 
-<Link to={'/courses/Marketing'}state={{Cat:"Marketing"}}className='Link'>Marketing</Link> 
-<Link to={'/courses/Life Style'}state={{Cat:"Lifestyle"}}className='Link'>Life Style</Link> 
-<Link to={'/courses/Photography & Video'}state={{Cat:"Photography & Video"}}className='Link'>Photography & Video</Link> 
-<Link to={'/courses/Music & Arts'}state={{Cat:"Music"}}className='Link'>Music & Arts</Link> 
-<Link to={'/courses/Health & Fitness'}state={{Cat:"Health & Fitness"}}className='Link'>Health & Fitness</Link> 
-<Link to={'/courses/Teaching & Academic'}state={{Cat:"Teaching & Academics"}}className='Link'>Teaching & Academics</Link>  */}
-
-<div>
+         <div>
       <nav>
   <ul>
    <li>
    <Link to={'/courses/development'}state={{Cat:"development"}} className='Link'>Development</Link> 
-        <ul className="SubCat_box">
+        <ul className="submenu">
         <li><Link className='Link'to={'/courses/Business'} state={{Cat:"web development"}}>web development</Link></li>
         <li><Link className='Link' to={'/courses/data science'} state={{Cat:'data science'}}>data science</Link></li>
         <li><Link className='Link' to={'/courses/mobile development'} state={{Cat:'mobile development'}}>mobile development</Link></li>
@@ -209,15 +196,7 @@ const Header = () => {
 </nav>
       </div> 
           </div>
-          <hr/>
-          {/* <div id='SubCat_box'>
-          <Link className='Link'>Business</Link>
-          <Link className='Link'>Business</Link>
-          <Link className='Link'>Business</Link>
-          <Link className='Link'>Business</Link>
-          <Link className='Link'>Business</Link>
-
-</div> */}
+          
 
           </div>
         </div>
@@ -228,7 +207,7 @@ const Header = () => {
         <span><img src='https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-16.png' alt='lens' onClick={Search} /></span><input className='Search_Bar'type='text' name='keyword' value={search.keyword} placeholder='Search for anything' onChange={InputHandler} />
        <div className='Cart_Tech_Box'>
        <div className='TecOnUdemy'><p>Udemy Business</p></div>
-        <div className='TecOnUdemy'><p>Tech on Udemy</p></div>
+        <div className='TecOnUdemy' onClick={()=>navigate('/teaching/Udemy')}><p >Tech on Udemy</p></div>
         <div className={token?"TecOnUdemy":'block'}><p onClick={()=>navigate('/home/my-courses/learning/')}>My Learning</p></div>
         <img src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/3264057/shopping-cart-icon-md.png' alt='cart_image' onClick={()=>navigate('/AddtoCart')}/><span className={token?"cart_count":'block'}>{CartCount}</span>
        </div>

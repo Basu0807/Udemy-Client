@@ -1,10 +1,13 @@
 import React from 'react'
 import Footer from './Layouts/Footer'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Add } from './Redux/CartSlice';
 
 const Home = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const AllCourses =useSelector((state)=>state.data.data)
+
+    const dispatch=useDispatch()
 
 
   return (
@@ -59,6 +62,12 @@ const Home = () => {
         <p>{item.instructor}</p>
         <p><span className='rating'>{item.rating}</span><img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/><span className='rating_count'>(5454529)</span></p>
         <p><span className='rating'>₹{item.offerPrice}</span> <span className='actual_price'>₹{item.price}</span></p>
+        
+        
+          <button className='Keep_Shopping' onClick={()=>  {
+            alert('Course added o your cart')
+            dispatch(Add(item))}}>Add To Cart</button>
+        
     </div>
   
       )

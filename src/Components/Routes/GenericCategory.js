@@ -37,11 +37,12 @@ const GenericCategory = () => {
         <p><span className='rating'>{item.rating}</span><img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/><span className='rating_count'>(5454529)</span></p>
         <p><span className='rating'>₹{item.offerPrice}</span> <span className='actual_price'>₹{item.price}</span></p>
         <div id='Add_toCart'>
-          <h3>{item.topic}</h3>
-          
-            <p>1.{item.point1}</p>
-            <p>2.{item.point2}</p>
-            <p>3.{item.point2}</p>
+          <h3>{item.topic}</h3><br/>
+          <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p><br/>
+
+            <p>1.{item.point1}</p><br/>
+            <p>2.{item.point2}</p><br/>
+            <p>3.{item.point2}</p><br/>
           
           <button className='Keep_Shopping' onClick={()=>  {
             alert('Course added o your cart')
@@ -159,11 +160,12 @@ const GenericCategory = () => {
         <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
       </div>
       <div id='Add_toCart'>
-          <h3>{item.topic}</h3>
-          
-            <p>1.{item.point1}</p>
-            <p>2.{item.point2}</p>
-            <p>3.{item.point2}</p>
+          <h3>{item.topic}</h3><br/>
+          <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p><br/>
+
+            <p>1.{item.point1}</p><br/>
+            <p>2.{item.point2}</p><br/>
+            <p>3.{item.point2}</p><br/>
           
           <button className='Keep_Shopping' onClick={()=>  {
             alert('Course added o your cart')

@@ -62,11 +62,11 @@ const GenericCourse = () => {
         <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
       </div>
       <div id='Add_toCart'>
-          <h3>{item.topic}</h3>
+          <h3>{item.topic}</h3><br/>
           
-            <p>1.{item.point1}</p>
-            <p>2.{item.point2}</p>
-            <p>3.{item.point2}</p>
+            <p>1.{item.point1}</p><br/>
+            <p>2.{item.point2}</p><br/>
+            <p>3.{item.point2}</p><br/>
           
           <button className='Keep_Shopping' onClick={()=>  {
             alert('Course added o your cart')

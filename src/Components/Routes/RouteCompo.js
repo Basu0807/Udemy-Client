@@ -9,6 +9,7 @@ import SignUp from './SignUp'
 import AddToCart from './AddToCart'
 import { useDispatch } from 'react-redux'
 import { fetchData } from '../Redux/Thunk'
+import TechonUdemy from './TechonUdemy'
 
 
 
@@ -30,6 +31,7 @@ const RouteCompo = () => {
         <Route path='/join/login-popup' element={<Login/>}/>
         <Route path='/join/signup-popup' element={<SignUp/>}/>
         <Route path='/AddtoCart' element={<AddToCart/>}/>
+        <Route path='/teaching/Udemy' element={<TechonUdemy/>}/>
         </Routes>
     
     
