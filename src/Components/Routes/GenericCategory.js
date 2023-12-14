@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Footer from '../Layouts/Footer';
 import { Add } from '../Redux/CartSlice';
 
@@ -8,29 +8,29 @@ import { Add } from '../Redux/CartSlice';
 const GenericCategory = () => {
   const AllCourses =useSelector((state)=>state.data.data)
   
-  const getSubcategoriesForCategory = (courses, category) => {
-    // Filter the courses for the desired category
-    const filteredCourses = courses.filter(course => course.category === category);
+//   const getSubcategoriesForCategory = (courses, category) => {
+//     // Filter the courses for the desired category
+//     const filteredCourses = courses.filter(course => course.category === category);
     
-// Extract unique subcategories from the filtered courses
-    const subcategories = Array.from(new Set(filteredCourses.map(course => course.subcategory)));
+// // Extract unique subcategories from the filtered courses
+//     const subcategories = Array.from(new Set(filteredCourses.map(course => course.subcategory)));
   
-    return subcategories;
-  };
+//     return subcategories;
+//   };
   
  
-  const marketingSubcategories = getSubcategoriesForCategory(AllCourses, 'Marketing');
-  const developmentSubcategories = getSubcategoriesForCategory(AllCourses, 'development');
-  const businessSubcategories = getSubcategoriesForCategory(AllCourses, 'business');
-  const FinanceAccountingSubcategories = getSubcategoriesForCategory(AllCourses, 'Finance & Accounting"');
-  const ITSoftwareSubcategories = getSubcategoriesForCategory(AllCourses, 'IT & Software');
-  const LifestyleSubcategories = getSubcategoriesForCategory(AllCourses, 'Lifestyle');
-  const PhotographyVideoSubcategories = getSubcategoriesForCategory(AllCourses, 'Photography & Video');
-  const MusicSubcategories = getSubcategoriesForCategory(AllCourses, 'Music');
-  const HealthFitnessSubcategories = getSubcategoriesForCategory(AllCourses, 'Health & Fitness');
-  const TeachingAcademicsSubcategories = getSubcategoriesForCategory(AllCourses, 'Teaching & Academics');
-  const DesignSubcategories = getSubcategoriesForCategory(AllCourses, 'Design');
-  // console.log("Subcategories for Design:", designSubcategories);
+  // const marketingSubcategories = getSubcategoriesForCategory(AllCourses, 'Marketing');
+  // const developmentSubcategories = getSubcategoriesForCategory(AllCourses, 'development');
+  // const businessSubcategories = getSubcategoriesForCategory(AllCourses, 'business');
+  // const FinanceAccountingSubcategories = getSubcategoriesForCategory(AllCourses, 'Finance & Accounting"');
+  // const ITSoftwareSubcategories = getSubcategoriesForCategory(AllCourses, 'IT & Software');
+  // const LifestyleSubcategories = getSubcategoriesForCategory(AllCourses, 'Lifestyle');
+  // const PhotographyVideoSubcategories = getSubcategoriesForCategory(AllCourses, 'Photography & Video');
+  // const MusicSubcategories = getSubcategoriesForCategory(AllCourses, 'Music');
+  // const HealthFitnessSubcategories = getSubcategoriesForCategory(AllCourses, 'Health & Fitness');
+  // const TeachingAcademicsSubcategories = getSubcategoriesForCategory(AllCourses, 'Teaching & Academics');
+  // const DesignSubcategories = getSubcategoriesForCategory(AllCourses, 'Design');
+  
 
 
 
