@@ -110,6 +110,7 @@ top: -3%;
 .Link{
     color: black;
     text-decoration: none;
+    width: 15%;
 
 }
 .Link:hover{
@@ -468,7 +469,7 @@ background-size: cover;
 }
 .sub_routing{
     display: flex;
-    width: 60%;
+    width: 80%;
     justify-content: space-between;
    
 }
@@ -690,6 +691,7 @@ div img[alt='img']{
 }
 .added_course_container img[alt='course_img']{
     width: 20%;
+    height: 7rem;
 }
 .product_details{
     width: 60%;
@@ -720,6 +722,7 @@ div img[alt='img']{
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 14px;
+    margin-top: 3rem;
 
 }
 .footer_detail_box{
@@ -834,7 +837,7 @@ transform: translate(-50%);
 /* .....................MEDIA_QUERY...................... */
 
 
-@media only screen and (min-width:300px) and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .Udemy_Category {
         width: 7rem;
         justify-content: space-between;
@@ -847,18 +850,19 @@ transform: translate(-50%);
     }
 
     img[alt='lens']{
-        left: 50px;
+        left: 40px;
     }
 
     .cart_count {
-top: 0.1%;
-right: 1%;
+        position: relative;
+        top: -15%;
+        right: 4%;
     }
     .Profile{
         width:max-content;
     }
     .Home_img_Container{
-        height: 28vh;
+        height: 70vh;
     }
     .Inner_Container{
         height: 62%;
@@ -876,12 +880,18 @@ right: 1%;
         padding: 10px 15px 0px 10px;
     }
     .instructor_box{
-        height: 14rem;
+        height: 12rem;
+        font-size: 15px;
+        padding: 20px 20px 20px 0px;
     } 
     .instructor_box img[alt='instructor'] {
-        height: 40%;
+        height: 35%;
+        width: 50%;
     }
 
+    .Rating_Container {
+        display: none;
+    }
     .mobile_Nav_Bar{
         height: 3rem;
         display: flex;
@@ -905,6 +915,7 @@ right: 1%;
    }
    span img[alt='lens']{
     position: relative;
+    left: 90px;
 
    }
     .Ham_icon{
@@ -933,16 +944,20 @@ right: 1%;
     .Cat_box{
         width: 13rem;
         top: -18%;
+        
     }
     nav ul li{
         background-color: white;
         left: -20%;
         font-weight: bold;
         
+        
 
   }
   nav ul li > :hover{
-    left: 112%;
+    left: 120%;
+    z-index: 2;
+    
   }
 
   nav ul{
@@ -955,5 +970,14 @@ margin: 6% 0;
     color: white;
     padding: 0 0.5rem;
   }
-  
+  .content{
+    width: 33%;
+    padding: 10px 10px;
+  }
+  .left_details {
+    width: 67%;
+}
+.rightside_total_container {
+    justify-content: flex-start;
+}
 }

@@ -5,6 +5,8 @@ import { Add } from '../Redux/CartSlice';
 
 
 const GenericCourse = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   const Products =useSelector((state)=>state.Search.SearchData)
   const Keyword =useSelector((state)=>state.Search.keyword)
   // console.log(Products);

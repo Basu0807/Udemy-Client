@@ -22,7 +22,7 @@ const Header = () => {
     // console.log(search);
     const token =localStorage.getItem('token')
     const UserName =localStorage.getItem('UserName')
-    const UserEmail =localStorage.getItem('userEmail')
+    const UserEmail =localStorage.getItem('UserEmail')
     // console.log(token);
     const getFirstLetters = (fullName) => {
       if (fullName) {
@@ -85,7 +85,7 @@ const Header = () => {
           </div><br/>
           
         <hr/>
-        <p onClick={()=>navigate('/home/my-courses/learning/')}>My Learning</p><hr/>
+       <p onClick={()=>navigate('/home/my-courses/learning/')}>My Learning</p><hr/>
         <p onClick={()=>navigate('/teaching/Udemy')}>Tech On Udemy</p><hr/>
        <p onClick={()=>navigate('/AddtoCart')}>Add to cart</p><hr/>
       <p onClick={Logout}>Log out</p>
@@ -93,6 +93,8 @@ const Header = () => {
         
         </div>
     </li>
+    <li><div className={token?"block":'Signup'} onClick={()=>navigate('/join/login-popup')}><p>Log in</p></div></li>
+    <li><div className={token?"block":'Signup'}onClick={()=>navigate('/join/signup-popup')}><p>Sign up</p></div></li>
    <li>
    <Link to={'/courses/development'}state={{Cat:"development"}} className='Link'>Development</Link> 
         <ul className="submenu">
@@ -225,7 +227,7 @@ const Header = () => {
         <img src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg' alt='Udemy_Logo' onClick={()=>navigate('/')} />
     <span><img src='https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-16.png' alt='lens' onClick={Search} /></span><input className='Search_Bar'type='text' name='keyword' value={search.keyword} placeholder='Search for anything' onChange={InputHandler} />
 
-       <img src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/3264057/shopping-cart-icon-md.png' alt='cart_image' onClick={()=>navigate('/AddtoCart')}/><span className={token?"cart_count":'block'}>{CartCount}</span>
+       <img src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/3264057/shopping-cart-icon-md.png' alt='cart_image' onClick={()=>navigate('/AddtoCart')}/><span className="cart_count">{CartCount}</span>
 
     </div>
     

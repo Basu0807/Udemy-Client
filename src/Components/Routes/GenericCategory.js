@@ -1,40 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Footer from '../Layouts/Footer';
 import { Add } from '../Redux/CartSlice';
 
 
 const GenericCategory = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   const AllCourses =useSelector((state)=>state.data.data)
   
-//   const getSubcategoriesForCategory = (courses, category) => {
-//     // Filter the courses for the desired category
-//     const filteredCourses = courses.filter(course => course.category === category);
-    
-// // Extract unique subcategories from the filtered courses
-//     const subcategories = Array.from(new Set(filteredCourses.map(course => course.subcategory)));
-  
-//     return subcategories;
-//   };
-  
- 
-  // const marketingSubcategories = getSubcategoriesForCategory(AllCourses, 'Marketing');
-  // const developmentSubcategories = getSubcategoriesForCategory(AllCourses, 'development');
-  // const businessSubcategories = getSubcategoriesForCategory(AllCourses, 'business');
-  // const FinanceAccountingSubcategories = getSubcategoriesForCategory(AllCourses, 'Finance & Accounting"');
-  // const ITSoftwareSubcategories = getSubcategoriesForCategory(AllCourses, 'IT & Software');
-  // const LifestyleSubcategories = getSubcategoriesForCategory(AllCourses, 'Lifestyle');
-  // const PhotographyVideoSubcategories = getSubcategoriesForCategory(AllCourses, 'Photography & Video');
-  // const MusicSubcategories = getSubcategoriesForCategory(AllCourses, 'Music');
-  // const HealthFitnessSubcategories = getSubcategoriesForCategory(AllCourses, 'Health & Fitness');
-  // const TeachingAcademicsSubcategories = getSubcategoriesForCategory(AllCourses, 'Teaching & Academics');
-  // const DesignSubcategories = getSubcategoriesForCategory(AllCourses, 'Design');
-  
-
-
-
-  // console.log(subcategories);
  const Category =useLocation().state.Cat
 //  console.log(Category);
  const dispatch =useDispatch()
@@ -44,8 +19,8 @@ const GenericCategory = () => {
   return (
    <>
    <div className='Generic_Cat_Con'>
-    {/* <div>
-    {Category==="development"?
+    <div className='sub_routes'>
+    {Category==="development" ||Category==='web development'||Category==='data science'||Category==='mobile development'||Category==='programming language'?
     <div className='sub_routing'>
          <Link to={'/courses/development'}state={{Cat:"development"}} className='Link'>Development</Link> 
          <Link className='Link'to={'/courses/Business'} state={{Cat:"web development"}}>web development</Link>
@@ -54,26 +29,29 @@ const GenericCategory = () => {
         <Link className='Link' to={'/courses/programming language'} state={{Cat:'programming language'}}>programming language</Link>
 
     </div>:""}
-    {Category==="business" && businessSubcategories.filter((item)=>item===businessSubcategories)?
+    {Category==="business" ||Category==='operations'||Category==='entrepreneurship'||Category==='communication'||Category==='management'||Category==='sales'?
     <div className='sub_routing'>
-      <Link className='Link' to={'/courses/operations'} state={{Cat:'operations'}}>operations</Link>
+          <Link to={'/courses/Business'}state={{Cat:"business"}} className='Link'>Business</Link> 
+<Link className='Link' to={'/courses/operations'} state={{Cat:'operations'}}>operations</Link>
         <Link className='Link' to={'/courses/entrepreneurship'} state={{Cat:'entrepreneurship'}}>entrepreneurship</Link>
         <Link className='Link' to={'/courses/communication'} state={{Cat:'communication'}}>communication</Link>
         <Link className='Link' to={'/courses/management'} state={{Cat:'management'}}>management</Link>
         <Link className='Link' to={'/courses/sales'} state={{Cat:'sales'}}>sales</Link>
 
     </div>:""}
-    {Category==="Finance & Accounting" || AllCourses.filter((item)=>item.subcategories===FinanceAccountingSubcategories)?
+    {Category==="Finance & Accounting"||Category==='Accounting & Bookkeeping'||Category==='Compliance'||Category==='Cryptocurrency & Blockchain'||Category==='Economics'||Category==='Finance' ?
     <div className='sub_routing'>
-      <Link className='Link' to={'/courses/Accounting & Bookkeeping'} state={{Cat:'Accounting & Bookkeeping'}}>Accounting & Bookkeeping</Link>
+          <Link to={'/courses/Finance and Accounting'}state={{Cat:"Finance & Accounting"}}className='Link'>Finance and Accounting</Link> 
+<Link className='Link' to={'/courses/Accounting & Bookkeeping'} state={{Cat:'Accounting & Bookkeeping'}}>Accounting & Bookkeeping</Link>
         <Link className='Link' to={'/courses/Compliance'} state={{Cat:'Compliance'}}>Compliance</Link>
         <Link className='Link' to={'/courses/Cryptocurrency & Blockchain'} state={{Cat:'Cryptocurrency & Blockchain'}}>Cryptocurrency & Blockchain</Link>
         <Link className='Link' to={'/courses/Economics'} state={{Cat:'Economics'}}>Economics</Link>
         <Link className='Link' to={'/courses/Finance'} state={{Cat:'Finance'}}>Finance</Link>
 
     </div>:""}
-    {Category==="IT & Software" || AllCourses.filter((item)=>item.subcategories===ITSoftwareSubcategories)?
+    {Category==="IT & Software"||Category==='IT Certifications'||Category==='Network & Security'||Category==='Hardware'||Category==='Other IT & Software'||Category==='Operating Systems & Servers' ?
     <div className='sub_routing'>
+          <Link to={'/courses/IT & Software'}state={{Cat:"IT & Software"}}className='Link'>IT & Software</Link> 
       <Link className='Link' to={'/courses/IT Certifications'} state={{Cat:'IT Certifications'}}>IT Certifications</Link>
         <Link className='Link' to={'/courses/Network & Security'} state={{Cat:'Network & Security'}}>Network & Security</Link>
         <Link className='Link' to={'/courses/Hardware'} state={{Cat:'Hardware'}}>Hardware</Link>
@@ -81,8 +59,9 @@ const GenericCategory = () => {
         <Link className='Link' to={'/courses/Operating Systems & Servers'} state={{Cat:'Operating Systems & Servers'}}>Operating Systems & Servers</Link>
 
     </div>:""}
-    {Category==="Design" || AllCourses.filter((item)=>item.subcategories===DesignSubcategories)?
-    <div className='sub_routing'>
+    {Category==="Design" ||Category==='Web Design'||Category==='Design Tools'||Category==='Game Design'||Category==='User Experience Design'||Category==='Graphic Design & Illustration'?
+    <div className='sub_routing'> 
+       <Link to={'/courses/Design'}state={{Cat:"Design"}}className='Link'>Design</Link> 
       <Link className='Link' to={'/courses/Web Design'} state={{Cat:'Web Design'}}>Web Design</Link>
       <Link className='Link' to={'/courses/Design Tools'} state={{Cat:'Design Tools'}}>Design Tools</Link>
       <Link className='Link' to={'/courses/Game Design'} state={{Cat:'Game Design'}}>Game Design</Link>
@@ -90,16 +69,18 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/Graphic Design & Illustration'} state={{Cat:'Graphic Design & Illustration'}}>Graphic Design & Illustration</Link>
 
     </div>:""}
-    {Category==="Marketing" || AllCourses.filter((item)=>item.subcategories===marketingSubcategories)?
+    {Category==="Marketing"||Category==='Digital Marketing'||Category==='Branding'||Category==='Marketing Fundamentals'||Category==='Social Media Marketing'||Category==='Search Engine Optimization' ?
     <div className='sub_routing'>
+          <Link to={'/courses/Marketing'}state={{Cat:"Marketing"}}className='Link'>Marketing</Link> 
       <Link className='Link' to={'/courses/Digital Marketing'} state={{Cat:'Digital Marketing'}}>Digital Marketing</Link>
       <Link className='Link' to={'/courses/Branding'} state={{Cat:'Branding'}}>Branding</Link>
       <Link className='Link' to={'/courses/Marketing Fundamentals'} state={{Cat:'Marketing Fundamentals'}}>Marketing Fundamentals</Link>
       <Link className='Link' to={'/courses/Social Media Marketing'} state={{Cat:'Social Media Marketing'}}>Social Media Marketing</Link>
       <Link className='Link' to={'/courses/Search Engine Optimization'} state={{Cat:'Search Engine Optimization'}}>Search Engine Optimization</Link>
     </div>:""}
-    {Category==="Lifestyle" || AllCourses.filter((item)=>item.subcategories===LifestyleSubcategories)?
+    {Category==="Lifestyle"||Category==='Arts & Crafts'||Category==='Beauty & Makeup'||Category==='Esoteric Practices'||Category==='Food & Beverage'||Category==='Gaming' ?
     <div className='sub_routing'>
+          <Link to={'/courses/Life Style'}state={{Cat:"Lifestyle"}}className='Link'>Life Style</Link> 
       <Link className='Link' to={'/courses/Arts & Crafts'} state={{Cat:'Arts & Crafts'}}>Arts & Crafts</Link>
       <Link className='Link' to={'/courses/Beauty & Makeup'} state={{Cat:'Beauty & Makeup'}}>Beauty & Makeup</Link>
       <Link className='Link' to={'/courses/Esoteric Practices'} state={{Cat:'Esoteric Practices'}}>Esoteric Practices</Link>
@@ -107,8 +88,9 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/Gaming'} state={{Cat:'Gaming'}}>Gaming</Link>
 
     </div>:""}
-    {Category==="Photography & Video" || AllCourses.filter((item)=>item.subcategories===PhotographyVideoSubcategories)?
+    {Category==="Photography & Video"||Category==='Digital Photography'||Category==='Photography'||Category==='Commercial Photography'||Category==='Photography Tools'||Category==='Portrait Photography' ?
     <div className='sub_routing'>
+          <Link to={'/courses/Photography & Video'}state={{Cat:"Photography & Video"}}className='Link'>Photography & Video</Link> 
       <Link className='Link' to={'/courses/Digital Photography'} state={{Cat:'Digital Photography'}}>Digital Photography</Link>
       <Link className='Link' to={'/courses/Photography'} state={{Cat:'Photography'}}>Photography</Link>
       <Link className='Link' to={'/courses/Commercial Photography'} state={{Cat:'Commercial Photography'}}>Commercial Photography</Link>
@@ -116,8 +98,9 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/Portrait Photography'} state={{Cat:'Portrait Photography'}}>Portrait Photography</Link>
 
     </div>:""}
-    {Category==="Music" || AllCourses.filter((item)=>item.subcategories===MusicSubcategories)?
+    {Category==="Music"||Category==='Instruments'||Category==='Vocal'||Category==='Music Techniques'||Category==='Music Production'||Category==='Music Fundamentals' ?
     <div className='sub_routing'>
+          <Link to={'/courses/Music & Arts'}state={{Cat:"Music"}}className='Link'>Music & Arts</Link> 
       <Link className='Link' to={'/courses/Instruments'} state={{Cat:'Instruments'}}>Instruments</Link>
       <Link className='Link' to={'/courses/Vocal'} state={{Cat:'Vocal'}}>Vocal</Link>
       <Link className='Link' to={'/courses/Music Techniques'} state={{Cat:'Music Techniques'}}>Music Techniques</Link>
@@ -125,8 +108,9 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/ Music Fundamentals'} state={{Cat:'Music Fundamentals'}}> Music Fundamentals</Link>
 
     </div>:""}
-    {Category==="Health & Fitness" || AllCourses.filter((item)=>item.subcategories===HealthFitnessSubcategories)?
+    {Category==="Health & Fitness"||Category==='Fitness'||Category==='Sports'||Category==='Nutrition & Diet'||Category==='General Health' ?
     <div className='sub_routing'>
+          <Link to={'/courses/Health & Fitness'}state={{Cat:"Health & Fitness"}}className='Link'>Health & Fitness</Link> 
       <Link className='Link' to={'/courses/Fitness'} state={{Cat:'Fitness'}}>Fitness</Link>
       <Link className='Link' to={'/courses/Sports'} state={{Cat:'Sports'}}>Sports</Link>
       <Link className='Link' to={'/courses/Yoga'} state={{Cat:'Sports'}}>Sports</Link>
@@ -134,8 +118,10 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/General Health'} state={{Cat:'General Health'}}>General Health</Link>
 
     </div>:""}
-    {Category==="Teaching & Academics" && AllCourses.filter((item)=>item.subcategories===TeachingAcademicsSubcategories)?
+    {Category==="Teaching & Academics"||Category==='Engineering'||Category==='Humanities'||Category==='Math'||Category==='Science'||Category==='Online Education' ?
     <div className='sub_routing'>
+  <Link to={'/courses/Teaching & Academic'}state={{Cat:"Teaching & Academics"}}className='Link'>Teaching & Academics</Link>
+
       <Link className='Link' to={'/courses/Engineering'} state={{Cat:'Engineering'}}>Engineering</Link>
       <Link className='Link' to={'/courses/Humanities'} state={{Cat:'Humanities'}}>Humanities</Link>
       <Link className='Link' to={'/courses/Math'} state={{Cat:'Math'}}>Math</Link>
@@ -143,7 +129,7 @@ const GenericCategory = () => {
       <Link className='Link' to={'/courses/Online Education'} state={{Cat:'Online Education'}}>Online Education</Link>
 
     </div>:""}
-    </div><br/> */}
+    </div><br/>
     <div>
       <h1>{Category} Courses</h1><br/><br/>
       <h2>Courses to get you started</h2>
@@ -198,7 +184,7 @@ const GenericCategory = () => {
    <div className='instructor_box'>
     <img src='https://img-c.udemycdn.com/user/75x75/31334738_a13c_3.jpg' alt='instructor'/>
     <div className='instruc_details'>
-    <p><b>Dr. Angela Yu</b></p>
+    <p><b>Angela</b></p>
     <p style={{fontSize:13}}>Python, Datascience</p>
     <p><b style={{fontSize:14}}>4.6</b> <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span style={{fontSize:12}}>Instructor Rating</span></p>
     <p><b style={{fontSize:13}}>2,345,25</b> <span style={{fontSize:12}}>Students</span></p>
