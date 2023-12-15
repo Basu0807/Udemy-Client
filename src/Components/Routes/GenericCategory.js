@@ -149,7 +149,7 @@ const GenericCategory = () => {
             alert('Course added o your cart')
             dispatch(Add(item))}}>Add To Cart</button>
         <div id='Add_toCart'>
-          <h3>{item.topic}</h3><br/>
+          <h4>{item.topic}</h4><br/>
           <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p><br/>
 
             <p>1.{item.point1}</p><br/>
@@ -275,7 +275,7 @@ const GenericCategory = () => {
             dispatch(Add(item))}}>Add To Cart</button>
       </div>
       <div id='Add_toCart'>
-          <h3>{item.topic}</h3><br/>
+          <h4>{item.topic}</h4><br/>
           <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p><br/>
 
             <p>1.{item.point1}</p><br/>

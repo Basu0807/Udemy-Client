@@ -528,16 +528,20 @@ span img[alt='star']{
 #Add_toCart{
     /* height: 18rem; */
     display: none;
-    width: 20rem;
+    width: 15rem;
     position:absolute;
     background-color: white;
     bottom: 5%;
     transform: translate(-19%);
-    padding: 25px;
+    padding: 10px;
     border: 1px solid rgb(215, 215, 215);
     
    
     
+}
+#Add_toCart p{
+    font-size: 12px;
+
 }
 .content:hover > #Add_toCart{
     display: flex;
@@ -872,7 +876,7 @@ transform: translate(-50%);
     }
     .Home_img_Container{
         height: 20rem;
-        /* background-position: center; */
+       
     }
     .Inner_Container{
     display: none;
@@ -883,10 +887,17 @@ transform: translate(-50%);
     .subjects{
         width: 100%;
     }
-   
+    
     .content h3{
         font-size: 15px;
     }
+    .none{
+        display: block;
+    }
+    .content:hover > #Add_toCart{
+        display: none;
+    }
+  
     .PopularBox{
         width: 8rem;
         font-size: 13px;

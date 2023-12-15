@@ -67,7 +67,7 @@ const GenericCourse = () => {
             dispatch(Add(item))}}>Add To Cart</button>
       </div>
       <div id='Add_toCart'>
-          <h3>{item.topic}</h3><br/>
+          <h4>{item.topic}</h4><br/>
           
             <p>1.{item.point1}</p><br/>
             <p>2.{item.point2}</p><br/>
