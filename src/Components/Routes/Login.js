@@ -56,12 +56,12 @@ const InputHandler=(e)=>{
       <h3>Log in to your Udemy account</h3><br/>
       <img src='https://img-c.udemycdn.com/user/50x50/anonymous_3.png' alt='profile_img'/><br/>
       <p>Welcome back,{User}</p><br/>
-      <input type='email' name="email" value={data.email}  onChange={InputHandler} placeholder='Email' required/><br/>
+      <input type='text' name="email" value={data.email}  onChange={InputHandler} placeholder='Email' required autoComplete='off'/><br/>
       <input type='password' name="password" value={data.password}  onChange={InputHandler} placeholder='password' required/><br/>
       <button type='button' className='login_btn' onClick={SubmitHandler}>Log in</button><br/>
        <p>or <span className='forget_password'>Forget Password</span></p><br/>
        <hr/>
-       <p>Don't have account? <span className='forget_password' onClick={ScrollToTop}>Sign up</span></p><br/>
+       <p>Don't have account? <span className='forget_password'  onClick={ScrollToTop}>Sign up</span></p><br/>
        <p className='forget_password' >Log in with your organization</p>
 
     </form>

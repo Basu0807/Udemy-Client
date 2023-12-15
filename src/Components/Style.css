@@ -1013,6 +1013,7 @@ margin: 6% 0;
     }
     nav ul li{
         left: -10%;
+        z-index: 2;
     }
     .sub_routing {
         width: 100%;
@@ -1107,6 +1108,6 @@ margin: 6% 0;
     }
     .Login_Container{
         width: 70%;
-        z-index: -1;
+        height: 65vh;
     }
 }
