@@ -1087,7 +1087,7 @@ margin: 6% 0;
     }
     .checkout{
         position: fixed;
-        bottom: 0%;
+        bottom: 1%;
         width: 89%;
     }
     .Home_img_Container{
