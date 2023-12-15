@@ -56,8 +56,8 @@ const TechonUdemy = () => {
      <div className='top_inst_box'>
      <div className='top_inst'>
             <img src='https://s.udemycdn.com/teaching/instructors/en/frank-2x-v2.jpg' alt='img'/>
-            <div>
-            <p style={{fontSize:25}}>“I’m proud to wake up knowing my work is helping people around the world improve their careers and build great things. While being a full-time instructor is hard work, it lets you work when, where, and how you want.”</p>
+            <div className='top_inst_details'>
+            <p>“I’m proud to wake up knowing my work is helping people around the world improve their careers and build great things. While being a full-time instructor is hard work, it lets you work when, where, and how you want.”</p>
             <br/><br/>
 <b>Frank Kane</b>
 <p>Data Science & IT Certifications</p>

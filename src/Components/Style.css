@@ -616,6 +616,10 @@ div img[alt='img']{
     height: 100%;
     padding: 0px 15px;
 }
+.top_inst_details p{
+    font-size: 25px;
+        }
+    
 .Become_inst_box{
     background-color:rgb(237, 237, 237) ;
     height: 20rem;
@@ -1110,5 +1114,41 @@ margin: 6% 0;
     .Login_Container{
         width: 70%;
         height: 65vh;
+    }
+    .TechOnUdemy_img{
+        height: 25vh;
+        background-position: center;
+    }
+    .inner_text{
+        display: none;
+    }
+    .student_numbers h1{
+        font-size: 20px;
+    }
+    .Tech_On_reason{
+        height: 22rem;
+    }
+    .number_box{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        height: 8rem;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    .top_inst_box{
+        height: 10rem;
+    }
+    .top_inst_details p{
+font-size: 8px;
+    }
+    .Become_inst_box{
+        margin-top: 2rem;
+        height: 16rem;
+    }
+    .get_started{
+        width: 95%;
+    }
+    .footer{
+        margin-top: 2rem;
     }
 }
