@@ -469,7 +469,7 @@ background-size: cover;
 }
 .sub_routing{
     display: flex;
-    width: 80%;
+    /* width: 80%; */
     justify-content: space-between;
    
 }
