@@ -225,10 +225,9 @@ const Header = () => {
           </div>
         </div>
         <img src='https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg' alt='Udemy_Logo' onClick={()=>navigate('/')} />
-    <span><img src='https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-16.png' alt='lens' onClick={Search} /></span><input className='Search_Bar'type='text' name='keyword' value={search.keyword} placeholder='Search for anything' onChange={InputHandler} />
+    <div className='search_section'><img src='https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-16.png' alt='lens' onClick={Search} /><input className='Search_Bar'type='text' name='keyword' value={search.keyword} placeholder='Search for anything' onChange={InputHandler} /></div>
 
-       <img src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/3264057/shopping-cart-icon-md.png' alt='cart_image' onClick={()=>navigate('/AddtoCart')}/><span className="cart_count">{CartCount}</span>
-
+<div className='cart_section'><img src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/3264057/shopping-cart-icon-md.png' alt='cart_image' onClick={()=>navigate('/AddtoCart')}/><div className="cart_count">{CartCount}</div></div>
     </div>
     
 

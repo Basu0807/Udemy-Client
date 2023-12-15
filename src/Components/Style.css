@@ -271,6 +271,7 @@ position: relative;
 z-index: -1;
 background-image: url('https://img-b.udemycdn.com/notices/web_carousel_slide/image/a7e5c86e-fafa-4029-b2af-570d7bd4a573.jpg');
 background-size: cover;
+background-position: center;
 }
 .Inner_Container{
     background-color: white;
@@ -860,22 +861,24 @@ transform: translate(-50%);
         left: 40px;
     }
 
+
     .cart_count {
         position: relative;
-        top: -15%;
-        right: 2.8rem
+        right: 17%;
+       
     }
     .Profile{
         width:max-content;
     }
     .Home_img_Container{
-        height: 25vh;
+        height: 20rem;
+        /* background-position: center; */
     }
     .Inner_Container{
-        height: 75%;
+    display: none;
     }
-    .Inner_Container h1{
-        font-size: 25px;
+    .brands_box{
+        text-align: center;
     }
     .subjects{
         width: 100%;
@@ -913,12 +916,19 @@ transform: translate(-50%);
         width: 22rem;
         padding: 0 8rem;
     }
+
     .mobile_Nav_Bar img[alt='cart_image']{
         width: 2rem;
     }
+    .search_section{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+    }
    .mobile_Nav_Bar input{
-    height: 70%;
-    width: 25%;
+    height: 80%;
+    width: 80%;
     padding: 0 3rem;
     border-radius: 5rem;
     border: 1px solid rgb(203, 203, 203);
@@ -927,6 +937,9 @@ transform: translate(-50%);
     position: relative;
     left: 4rem
 
+   }
+   .cart_section{
+    display: flex;
    }
     .Ham_icon{
         height: 50px;
