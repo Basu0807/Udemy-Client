@@ -859,19 +859,22 @@ transform: translate(-50%);
     .cart_count {
         position: relative;
         top: -15%;
-        right: 4.8rem
+        right: 2.8rem
     }
     .Profile{
         width:max-content;
     }
     .Home_img_Container{
-        height: 70vh;
+        height: 25vh;
     }
     .Inner_Container{
         height: 75%;
     }
     .Inner_Container h1{
         font-size: 2rem;
+    }
+    .subjects{
+        width: 100%;
     }
    
     .content h3{
@@ -918,7 +921,7 @@ transform: translate(-50%);
    }
    span img[alt='lens']{
     position: relative;
-    left: 6rem
+    left: 4rem
 
    }
     .Ham_icon{
