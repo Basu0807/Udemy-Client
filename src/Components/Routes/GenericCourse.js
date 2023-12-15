@@ -61,7 +61,10 @@ const GenericCourse = () => {
         <p>{item.point1}</p>
         <p style={{fontSize:12}}>By {item.instructor}</p>
         <p style={{fontWeight:'bold'}}>{item.rating} <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> (2175)</p>
-        <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
+        <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p><br/>
+        <button className='Keep_Shopping none' onClick={()=>  {
+            alert('Course added o your cart')
+            dispatch(Add(item))}}>Add To Cart</button>
       </div>
       <div id='Add_toCart'>
           <h3>{item.topic}</h3><br/>

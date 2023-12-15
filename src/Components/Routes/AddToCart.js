@@ -76,8 +76,8 @@ const AddToCart = () => {
             <div className='product_details'>
               <h3>{item.topic}</h3>
               <p>{item.instructor}</p>
-              <p style={{fontWeight:'bold'}}>{item.rating} <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span> (2175)</span></p>
-              <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
+              <p style={{fontWeight:'bold',fontSize:10}}>{item.rating} <img src='https://i.pngimg.me/thumb/f/720/m2H7H7A0m2m2i8i8.jpg' alt='star'/> <span> (2175)</span></p>
+              <p style={{fontSize:10}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
 
             </div>
             <div>
@@ -96,7 +96,7 @@ const AddToCart = () => {
     <div className='rightside_total_container'>
       <p style={{color:'grey'}}>Total :</p>
       <h1>₹{Total}</h1>
-      <div  className='Keep_Shopping' onClick={BuyNow}><p>Checkout</p></div>
+      <div  className='Keep_Shopping checkout' onClick={BuyNow}><p>Checkout</p></div>
       <hr/>
       <p>Promotions</p>
       <div style={{display:'flex'}}>

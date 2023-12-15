@@ -831,7 +831,9 @@ transform: translate(-50%);
 .mobile_Nav_Bar{
  display: none;
 }
-
+.none{
+    display: none;
+}
 
 
 /* .....................MEDIA_QUERY...................... */
@@ -856,7 +858,7 @@ transform: translate(-50%);
     .cart_count {
         position: relative;
         top: -15%;
-        right: 4%;
+        right: 4.8rem
     }
     .Profile{
         width:max-content;
@@ -865,12 +867,12 @@ transform: translate(-50%);
         height: 70vh;
     }
     .Inner_Container{
-        height: 62%;
+        height: 75%;
     }
     .Inner_Container h1{
-        font-size: 25px;
+        font-size: 2rem;
     }
-
+   
     .content h3{
         font-size: 15px;
     }
@@ -908,14 +910,14 @@ transform: translate(-50%);
     }
    .mobile_Nav_Bar input{
     height: 70%;
-    width: 16rem;
+    width: 25%;
     padding: 0 3rem;
     border-radius: 5rem;
     border: 1px solid rgb(203, 203, 203);
    }
    span img[alt='lens']{
     position: relative;
-    left: 90px;
+    left: 6rem
 
    }
     .Ham_icon{
@@ -975,9 +977,132 @@ margin: 6% 0;
     padding: 10px 10px;
   }
   .left_details {
-    width: 67%;
+    width: 60%;
 }
 .rightside_total_container {
+    width: 30%;
     justify-content: flex-start;
 }
+}
+
+@media only screen and (max-width: 600px){
+    span img[alt='lens']{
+        left: 30px;
+    }
+
+    .Ham_icon{
+        width: 40px;
+    }
+    .mobile_Nav_Bar{
+        justify-content: end;
+    }
+    .mobile_Nav_Bar img[alt="Udemy_Logo"]{
+        width: 5rem;
+        padding: 0;
+    }
+    .mobile_Nav_Bar input {
+        width: 8rem;
+    }
+
+    .cart_count{
+        right: 1.2rem;
+    }
+    nav ul li{
+        left: -10%;
+    }
+    .sub_routing {
+        width: 100%;
+        font-size: 7px;
+        padding: 5px;
+
+    }
+    .Popular_Topics{
+        overflow: scroll;
+    }
+    .PopularBox{
+        border-radius: 10rem;
+    }
+    .Searched_item {
+        flex-direction: column;
+    }
+    .creative_box_contents{
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+    .content{
+        width: 45%;
+    }
+    .Popular_instr{
+        display: none;
+        overflow: scroll;
+    }
+    .instructor_box{
+        width: 50%;
+    }
+    .Searched_item_heading{
+        flex-direction: column;
+    }
+    .Searched_item img[alt='img']{
+        width: 20rem;
+    }
+    .footer{
+        flex-direction: column;
+        height: auto;
+    }
+    .footer_detail_box{
+        flex-direction: column;
+    }
+
+    .language_box{
+        width: 40%;
+        margin-bottom: 1rem;
+    }
+    .none{
+        display: block;
+    }
+    .content:hover > #Add_toCart{
+        display: none;
+    }
+    .Searched_item:hover >#Add_toCart{
+        display: none;
+    }
+    .Added_Items_Container{
+        flex-direction: column-reverse;
+    }
+    .rightside_total_container {
+        height: 25vh;
+        justify-content: space-around;
+    }
+    .left_details{
+        width: 100%;
+    }
+    .product_details h3{
+        font-size: 10px;
+    }
+    .checkout{
+        position: fixed;
+        bottom: 0%;
+        width: 89%;
+    }
+    .Home_img_Container{
+        height: 25vh;
+        background-position: center;
+    }
+    .subjects{
+        flex-direction: column;
+    }
+    .Inner_Container{
+        display: none;
+    }
+    .brands_box{
+        text-align: center;
+    }
+    .brand_images{
+        width: 97%;
+        flex-wrap: wrap;
+    }
+    .Login_Container{
+        width: 70%;
+        z-index: -1;
+    }
 }
