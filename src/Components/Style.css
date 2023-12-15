@@ -897,6 +897,9 @@ transform: translate(-50%);
     .content:hover > #Add_toCart{
         display: none;
     }
+    .Searched_item:hover> #Add_toCart{
+        display: none;
+    }
   
     .PopularBox{
         width: 8rem;
