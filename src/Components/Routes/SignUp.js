@@ -54,8 +54,8 @@ const ScrollToTop = () => {
     <div className='Login_Container'>
       <h3>Sign up and start learning</h3><br/>
       <input typeof='text' name="name" value={data.name}  onChange={InputHandler} placeholder='Full Name' required/><br/>
-      <input typeof='text' name="email" value={data.email}  onChange={InputHandler} placeholder='Email' required/><br/>
-      <input typeof='text' name="password" value={data.password}  onChange={InputHandler} placeholder='password' required/><br/>
+      <input type='email' name="email" value={data.email}  onChange={InputHandler} placeholder='Email' required/><br/>
+      <input type='password' name="password" value={data.password}  onChange={InputHandler} placeholder='password' required/><br/>
       <input type='checkbox' id='checkbox'/><span>Send me special offers, personlized recommendations, and learning tips.</span>
       
       <button type='button' className='login_btn' onClick={SubmitHandler}>Sign up</button><br/>
