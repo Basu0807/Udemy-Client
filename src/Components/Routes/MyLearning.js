@@ -1,66 +1,79 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom'
 import Footer from '../Layouts/Footer'
 
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 const MyLearning = () => {
-  const CartItems=useSelector((state)=>state.InDe.Cart)
-  // const dispatch = useDispatch()
+  const [orderedItems, setOrderedItems] = useState([]);
+  console.log(orderedItems);
   const navigate =useNavigate()
+const email =localStorage.getItem('UserEmail')
+console.log(email);
 
-  return (
-    <>
-    {CartItems.length !==0 ? 
-    <div className='Cart_Container'>
-   <h1>My Learning</h1><br/>
-   <div className='Added_Items_Container'>
-    <div className='left_details'>
-      <p>{CartItems.length} Courses</p><hr/>
-      {CartItems && CartItems.map((item,index)=>{
-        return(
-          <div key={index} className='added_course_container'>
-            <img src={item.image} alt='course_img'/>
-            <div className='product_details'>
-              <h3>{item.topic}</h3>
-              <p>{item.instructor}</p>
-              <p style={{fontWeight:'bold'}}>{item.rating} stars <span> (2175)</span></p>
-              <p style={{fontSize:12}}>{item.duration} Total hours. {item.lectures} lectures. All levels</p>
-
-            </div>
-            {/* <div>
-              <p className='remove' onClick={()=>dispatch(Remove(item._id))}>Remove</p>
-              <p className='remove'>Save for Later</p>
-              <p className='remove'>Move to wish list</p>
-            </div>
-            <div>
-              <h3 className='remove'>₹{item.offerPrice}</h3>
-            </div> */}
-
-          </div>
-        )
-      })}
-    </div>
-   
-   </div>
-      </div>
-    : 
-    <div className='Cart_Container'>
-    <h1>My Learning</h1><br/>
-    <p>{CartItems.length} Courses</p>
-    <div className='empty_container'>
-      <img src='https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2-2x.jpg' alt='empty_cart'/>
-      <p>Your don't have any course in your learning. Keep shopping to find a course!</p><br/>
-      <div  className='Keep_Shopping'onClick={()=>navigate('/')}>Add Courses</div>
-    </div>
-    
-      </div>
-      } 
+useEffect(() => {
+  const fetchOrderedItems = async () => {
+    try {
+      // Replace 'userEmail' with the actual email ID you want to fetch items for
+      const userEmail = email; // Replace with the desired email ID
+      const response = await axios.get(`http://localhost:4000/my/courses/${userEmail}`); // Pass the email ID in the URL
   
-      <Footer/>
-   </>
-    
-  )
+      setOrderedItems(response.data);
+    } catch (error) {
+      console.error('Error fetching ordered items:', error);
+    }
+  };
+  fetchOrderedItems();
+}, [email]);
+
+ 
+    return (
+    <>
+      {orderedItems.length !== 0 ? (
+        <div className='Cart_Container'>
+          {/* Your content to display ordered items */}
+          <h1>My Learning</h1>
+          <br />
+          <div className='Learning_Container'>
+            {/* Display ordered items */}
+            {orderedItems.map((item, index) => (
+              <div key={index} className='added_course_container'>
+                <img src={item.image} alt='course_img' />
+                <div className='product_details'>
+                  <h3>{item.topic}</h3>
+                  <p>{item.instructor}</p>
+                  <p style={{ fontWeight: 'bold' }}>
+                    {item.rating} stars <span> (2175)</span>
+                  </p>
+                  <p style={{ fontSize: 12 }}>
+                    {item.duration} Total hours. {item.lectures} lectures. All levels
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className='Cart_Container'>
+          {/* Display when there are no ordered items */}
+          <h1>My Learning</h1>
+          <br />
+          <div className='empty_container'>
+            <img src='https://s.udemycdn.com/browse_components/flyout/empty-shopping-cart-v2-2x.jpg' alt='empty_cart' />
+            <p>Your don't have any courses in your learning. Keep shopping to find a course!</p>
+            <br />
+            <div className='Keep_Shopping' onClick={() => navigate('/')}>
+              Add Courses
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer component */}
+      <Footer />
+    </>
+  );
 }
 
 export default MyLearning

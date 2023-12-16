@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../Layouts/Footer'
@@ -8,8 +8,13 @@ import {loadStripe} from '@stripe/stripe-js';
 
 const AddToCart = () => {
     const token =localStorage.getItem("token")
+    const UserEmail =localStorage.getItem("UserEmail")
     const CartItems=useSelector((state)=>state.InDe.Cart)
     const Total=useSelector((state)=>state.InDe.Total)
+    const[data]=useState({
+      email:UserEmail,
+      Item:CartItems
+    })
     // const quantity=useSelector((state)=>state.InDe.quantity)
     const navigate =useNavigate()
     const dispatch=useDispatch()
@@ -41,26 +46,33 @@ const AddToCart = () => {
             const headers = {
               "Content-Type": "application/json"
             };
-          
+            axios.post("http://localhost:4000/my/purchase",data)
             try {
               const response = await fetch("https://udemy-server-h44n.onrender.com/checkout", {
                 method: "POST",
                 headers: headers,
                 body: JSON.stringify(body)
               });
-          
+              
+              
+             
               const session = await response.json();
               const result = await stripe.redirectToCheckout({
                 sessionId: session.id
+          
               });
           
               if (result.error) {
                 console.log(result.error);
+
               }
             } catch (error) {
               console.error("Error:", error);
             }
+            
+
           };
+          
   return (
    <>
     {CartItems.length !==0 ? 

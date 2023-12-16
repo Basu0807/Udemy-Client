@@ -26,7 +26,7 @@ alert(res.data.msg)
 if(res.data.msg === "You have successfully registered"){
   localStorage.setItem("token",res.data.token)
   localStorage.setItem("UserName",res.data.user)
-  localStorage.setItem("userEmail",res.data.useremail)
+  localStorage.setItem("UserEmail",res.data.useremail)
   navigate('/')
 }
 else{
