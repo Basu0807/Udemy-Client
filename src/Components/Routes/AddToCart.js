@@ -46,7 +46,7 @@ const AddToCart = () => {
             const headers = {
               "Content-Type": "application/json"
             };
-            axios.post("https://udemy-server-h44n.onrender.com/my/purchase",data)
+            
             try {
               const response = await fetch("https://udemy-server-h44n.onrender.com/checkout", {
                 method: "POST",
@@ -54,14 +54,14 @@ const AddToCart = () => {
                 body: JSON.stringify(body)
               });
               
-              
              
               const session = await response.json();
               const result = await stripe.redirectToCheckout({
                 sessionId: session.id
           
               });
-          
+              await axios.post("https://udemy-server-h44n.onrender.com/my/purchase",data)
+              
               if (result.error) {
                 console.log(result.error);
 
