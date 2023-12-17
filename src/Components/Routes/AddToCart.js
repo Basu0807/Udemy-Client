@@ -56,12 +56,13 @@ const AddToCart = () => {
               
              
               const session = await response.json();
+              await axios.post("https://udemy-server-h44n.onrender.com/my/purchase",data)
+
               const result = await stripe.redirectToCheckout({
                 sessionId: session.id
           
               });
-              await axios.post("https://udemy-server-h44n.onrender.com/my/purchase",data)
-              
+          
               if (result.error) {
                 console.log(result.error);
 
