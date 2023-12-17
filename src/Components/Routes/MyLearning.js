@@ -17,7 +17,7 @@ useEffect(() => {
     try {
       // Replace 'userEmail' with the actual email ID you want to fetch items for
       const userEmail = email; // Replace with the desired email ID
-      const response = await axios.get(`http://localhost:4000/my/courses/${userEmail}`); // Pass the email ID in the URL
+      const response = await axios.get(`https://lively-kheer-8f0ecb.netlify.app/my/courses/${userEmail}`); // Pass the email ID in the URL
   
       setOrderedItems(response.data);
     } catch (error) {
