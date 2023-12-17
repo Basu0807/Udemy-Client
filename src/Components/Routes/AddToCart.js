@@ -46,7 +46,7 @@ const AddToCart = () => {
             const headers = {
               "Content-Type": "application/json"
             };
-            axios.post("http://localhost:4000/my/purchase",data)
+            axios.post("https://udemy-server-h44n.onrender.com/my/purchase",data)
             try {
               const response = await fetch("https://udemy-server-h44n.onrender.com/checkout", {
                 method: "POST",
