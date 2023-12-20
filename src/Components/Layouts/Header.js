@@ -48,16 +48,21 @@ const Header = () => {
     const Search= async (e)=>{
       e.preventDefault()
      
-        axios.get(`https://udemy-server-h44n.onrender.com/store/search/?keyword=${search.keyword}`)
-            .then((res)=>dispatch(SearchItem([res.data.data,search.keyword])))
-            .catch((err)=>console.log(err))
-         
+if(search.keyword){
+              axios.get(`https://udemy-server-h44n.onrender.com/store/search/?keyword=${search.keyword}`)
+              .then((res)=>dispatch(SearchItem([res.data.data,search.keyword])))
+              .catch((err)=>console.log(err))
+              navigate('/topic/'+search.keyword)
+             } 
+             else{
+              alert('Please write something related to course')
+             }
            setsearch({
               keyword:''
             })
           
      
-     navigate('/topic/'+search.keyword)
+    
       
     }
     const[menu,setmenu]=useState(false)
