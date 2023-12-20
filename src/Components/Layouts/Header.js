@@ -104,7 +104,7 @@ if(search.keyword){
    <Link to={'/courses/development'}state={{Cat:"development"}} className='Link'>Development</Link> 
         <ul className="submenu">
           <li>   <Link to={'/courses/development'}state={{Cat:"development"}} className='Link'>Development</Link> </li>
-        <li><Link className='Link'to={'/courses/Business'} state={{Cat:"web development"}}>web development</Link></li>
+        <li><Link className='Link'to={'/courses/web development'} state={{Cat:"web development"}}>web development</Link></li>
         <li><Link className='Link' to={'/courses/data science'} state={{Cat:'data science'}}>data science</Link></li>
         <li><Link className='Link' to={'/courses/mobile development'} state={{Cat:'mobile development'}}>mobile development</Link></li>
         <li><Link className='Link' to={'/courses/programming language'} state={{Cat:'programming language'}}>programming language</Link></li>
